@@ -42,6 +42,6 @@ notebook(dir=".")
 
 ## Step 3. There is no Step 3
 
-At this poin you will have opened a browser with jupyter notebook.
+At this point you will have opened a browser with jupyter notebook.
 
 To create a new julia notebook just click on NEW and select the julia for the language

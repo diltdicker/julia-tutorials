@@ -37,7 +37,8 @@ Pkg.add("IJulia")
 using IJulia
 notebook(dir=".")
 # answer yes for the prompt to use miniconda
-# alternatively you can add the kwarg detached=true to run the notebook detached
+# alternatively you can add the kwarg detached=true to run the notebook as a server in the background on http://localhost:8888
+# you can also run jupyter lab using jupyterlab() instead of notebook()
 ```
 
 ## Step 3. There is no Step 3

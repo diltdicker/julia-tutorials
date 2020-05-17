@@ -1,0 +1,7 @@
+name = "HelloWorld"
+uuid = "9e2a6069-6c29-4bd3-9f99-a6312543d0fe"
+authors = ["Dillon Dickerson <diltdicker@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Revise = "295af30f-e4ad-537b-8983-00126c2a3abe"

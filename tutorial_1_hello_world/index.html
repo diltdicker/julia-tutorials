@@ -13241,13 +13241,36 @@ julia&gt; pwd()
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[58]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="n">cd</span><span class="p">(</span><span class="s">&quot;HelloWorld&quot;</span><span class="p">)</span>
 </pre></div>
 
     </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_text output_error">
+<pre>
+IOError: chdir HelloWorld: no such file or directory (ENOENT)
+
+Stacktrace:
+ [1] uv_error at ./libuv.jl:97 [inlined]
+ [2] cd(::String) at ./file.jl:84
+ [3] top-level scope at In[58]:1</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -13302,7 +13325,7 @@ julia&gt; pwd()
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="p">]</span><span class="n">activate</span> <span class="o">.</span>
@@ -13471,7 +13494,7 @@ julia&gt; pwd()
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="s">&quot;&quot;&quot;</span>
@@ -13494,7 +13517,7 @@ julia&gt; pwd()
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[23]:</div>
+    <div class="prompt output_prompt">Out[60]:</div>
 
 
 
@@ -13576,7 +13599,7 @@ julia&gt; pwd()
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="prompt input_prompt">In&nbsp;[61]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="s">&quot;&quot;&quot;</span>
@@ -13608,7 +13631,7 @@ julia&gt; pwd()
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[47]:</div>
+    <div class="prompt output_prompt">Out[61]:</div>
 
 
 
@@ -13665,7 +13688,7 @@ MUDA
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[49]:</div>
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-julia"><pre><span></span><span class="o">?</span><span class="n">mudamuda</span><span class="p">()</span>
@@ -13681,20 +13704,11 @@ MUDA
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[49]:</div>
+    <div class="prompt output_prompt">Out[62]:</div>
 
 
 
 <div class="output_markdown rendered_html output_subarea output_execute_result">
-
-<pre><code>mudamuda([count])</code></pre>
-<p>Prints 'MUDA' the number of times specified. Default is 5 times.</p>
-<h1 id="Examples">Examples<a class="anchor-link" href="#Examples">&#182;</a></h1>
-<pre><code>julia-repl
-julia&gt; mudamuda(2)
-MUDA
-MUDA</code></pre>
-<hr>
 
 <pre><code>mudamuda([count])</code></pre>
 <p>Prints 'MUDA' the number of times specified. Default is 5 times.</p>
@@ -13731,18 +13745,16 @@ MUDA</code></pre>
 <span class="s">    oraora(2)</span>
 <span class="s">    ORA</span>
 <span class="s">    ORA</span>
+<span class="s">    ``\` &lt;- this would normally be 3 backticks but for I&#39;m issues displaying it properly</span>
+<span class="s">    &quot;&quot;&quot;</span>
+    <span class="k">function</span> <span class="n">oraora</span><span class="p">(</span><span class="n">count</span><span class="o">::</span><span class="kt">Int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="kp">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">count</span><span class="p">)</span>
+            <span class="n">println</span><span class="p">(</span><span class="s">&quot;ORA&quot;</span><span class="p">)</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+
+<span class="k">end</span> <span class="c"># module</span>
 </pre></div>
-
-<pre><code>"""
-function oraora(count::Int = 5)
-    for _ in range(1, stop=count)
-        println("ORA")
-    end
-end
-
-</code></pre>
-<p>end # module</p>
-<p>```</p>
 
 </div>
 </div>
@@ -14021,19 +14033,17 @@ ORA
 <span class="s">    ORA</span>
 <span class="s">    ORA</span>
 <span class="s">    ORA</span>
+<span class="s">    ``\` &lt;- this would normally be 3 backticks but for I&#39;m issues displaying it properly</span>
+<span class="s">    &quot;&quot;&quot;</span>
+    <span class="k">function</span> <span class="n">oraora</span><span class="p">(</span><span class="n">count</span><span class="o">::</span><span class="kt">Int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">_</span> <span class="kp">in</span> <span class="n">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="n">count</span><span class="p">)</span>
+            <span class="n">println</span><span class="p">(</span><span class="s">&quot;ORA&quot;</span><span class="p">)</span>
+            <span class="n">println</span><span class="p">(</span><span class="s">&quot;ORA&quot;</span><span class="p">)</span>
+        <span class="k">end</span>
+    <span class="k">end</span>
+
+<span class="k">end</span> <span class="c"># module</span>
 </pre></div>
-
-<pre><code>"""
-function oraora(count::Int = 5)
-    for _ in range(1, stop=count)
-        println("ORA")
-        println("ORA")
-    end
-end
-
-</code></pre>
-<p>end # module</p>
-<p>```</p>
 
 </div>
 </div>
